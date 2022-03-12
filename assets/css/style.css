@@ -11,6 +11,7 @@ body, html {
   background: #000E1B;
   color: #3a3a3a;
   height: 100%;
+  display: grid;
 }
 h1, h2, h3, h4, h5, h6 {
 	padding-bottom: 5px;
