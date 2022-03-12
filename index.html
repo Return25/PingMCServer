@@ -12,8 +12,7 @@
 		<link href="assets/css/bootstrap.css" rel="stylesheet">
 		
 		<!-- Custom stylesheet -->
-		<link rel="stylesheet" href="assets/css/style.css"> 
-		<link rel="stylesheet" href="assets/css/timerStyles.css">
+		<link rel="stylesheet" href="assets/css/style.css">
 		
 		<!-- Font Awesome -->
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -30,25 +29,39 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
+		
+		<style>
+			.bg{
+			    text-align: center;
+			    position: relative;
+			    
+			    background: url(assets/images/bg.png)  no-repeat center center;
+			    -webkit-background-size: cover;
+			       -moz-background-size: cover;
+			         -o-background-size: cover;
+			            background-size: cover;
+			}
+			.bg span{
+			    position: absolute;
+			    left: 50%;
+			    top: 50%;
+			    -webkit-transform: translate(-50%, -50%);
+			    -moz-transform: translate(-50%, -50%);
+			    -ms-transform: translate(-50%, -50%);
+			    -o-transform: translate(-50%, -50%);
+			    transform: translate(-50%, -50%);
+			}
+		</style>
 	</head>
 	
 	<body>
-	
 	<div class="bg">
-		<div class="bg-color">
-			<div class="container content">
-				<div class="row">
-					<div class="blazer clearfix">
-						<div class="col-sm-12">
-						   <h1>Bedwars GraphLC</h1>
-						   <h2 id="minecraft-server-status">检查服务器中</h2>
-						   <h3 id="minecraft-server-people">在线: 0/0</h3>
-						   <h3>IP: 106.14.32.20:17092</h3>        
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<span>
+		   <h1>Bedwars GraphLC</h1>
+		   <h2 id="minecraft-server-status">检查服务器中</h2>
+		   <h3 id="minecraft-server-people">在线: 0/0</h3>
+		   <h3>IP: 106.14.32.20:17092</h3>
+		</span>
 	</div>
    
     <script>
@@ -58,8 +71,6 @@
 	    .then(response => 
 	    	response.json().then(
 	    		function(data) {
-	    			console.log(data);
-	    			
 	    			var online = data.online;
 	    			document.getElementById('minecraft-server-status').innerHTML = '服务器' + (online ? '在线' : '离线');
 	    			if (online) {
@@ -70,37 +81,5 @@
 	    )
 	    .catch(e => document.getElementById('minecraft-server-status').innerHTML = '连接时出现错误');
     </script>
-    
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/timerStyles.js"></script>
-    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/jquery.placeholder.js"></script>
-    <script type="text/javascript">
-    	$(function() {
-				// Invoke the plugin
-				$('input, textarea').placeholder();
-			});
-    </script>
-    <script>
-      $("#count-down").TimeCircles(
-       {   
-           circle_bg_color: "#ffffff",
-           use_background: true,
-           bg_width: .2,
-           fg_width: 0.013,
-           time: {
-                Days: { color: "#ffffff" },
-                Hours: { color: "#ffffff" },
-                Minutes: { color: "#ffffff" },
-                Seconds: { color: "#ffffff" }
-            }
-       }
-    );
-    </script>
-    
   </body>
 </html>
