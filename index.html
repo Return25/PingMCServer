@@ -52,15 +52,17 @@
 	</div>
    
     <script>
-		//fetch("https://api.mcsrvstat.us/2/106.14.32.20:17092")
-	    //fetch("https://mcapi.xdefcon.com/server/106.14.32.20:17092/full/json")
-	    fetch('https://eu.mc-api.net/v3/server/ping/106.14.32.20:17092')
+		fetch("https://api.mcsrvstat.us/2/106.14.32.20:17092")
+	    //fetch('https://eu.mc-api.net/v3/server/ping/106.14.32.20:17092')
+	    //fetch('https://mcapi.xdefcon.com/server/106.14.32.20:17092/full/json')
 	    .then(response => 
 	    	response.json().then(
 	    		function(data) {
+	    			console.log(data);
+	    			
 	    			var online = data.online;
 	    			document.getElementById('minecraft-server-status').innerHTML = '服务器' + (online ? '在线' : '离线');
-	    			if (online = false) {
+	    			if (online) {
 	    				document.getElementById('minecraft-server-people').innerHTML = '在线: ' + data.players.online + '/' + data.players.max;
 	    			}
     			}
