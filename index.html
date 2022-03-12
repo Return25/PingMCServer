@@ -60,7 +60,7 @@
 		   <h1>Bedwars GraphLC</h1>
 		   <h2 id="minecraft-server-status">检查服务器中</h2>
 		   <h3 id="minecraft-server-people">在线: 0/0</h3>
-		   <h3>IP: 106.14.32.20:17092</h3>
+		   <h4>IP: 106.14.32.20:17092</h4>
 		</span>
 	</div>
    
@@ -74,7 +74,7 @@
 	    			var online = data.online;
 	    			document.getElementById('minecraft-server-status').innerHTML = '服务器' + (online ? '在线' : '离线');
 	    			if (online) {
-	    				document.getElementById('minecraft-server-people').innerHTML = '在线: ' + data.players.online + '/' + data.players.max;
+	    				document.getElementById('minecraft-server-people').innerHTML = '人数: ' + data.players.online + '/' + data.players.max;
 	    			}
     			}
 	    	)
